@@ -1,0 +1,24 @@
+{
+  "name": "nodejschat",
+  "version": "1.0.0",
+  "description": "Simple Demo Node.JS Chat Application",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.9.8",
+    "socket.io": "^1.1.0",
+    "socket.io-client": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "chat"
+  ],
+  "author": "Dustin Hoffner",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dustin-H/nodejschat.git"
+  }
+}

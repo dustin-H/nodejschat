@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script src="socket.io.js"></script>
+</head>
+
+<body>
+    Super Node.JS Chat
+    <form action="#" onsubmit="sendmsg()">
+        <input type="text" id="text">
+    </form>
+    <hr>
+    <div id="content"></div>
+</body>
+
+<script>
+    function printmsg(user, text) {
+        document.getElementById('content').innerHTML += "<b>" + user + "</b>:" + text + "<br><br>";
+    }
+
+    function sendmsg() {
+        var msg = document.getElementById('text').value;
+        socket.emit('msg', msg);
+        return false;
+    }
+
+    var username = prompt("Bitte Name eingeben", "Username");
+
+    var socket = io('http://localhost:8080/?username=' + username);
+
+    socket.on('msg', function (data) {
+        printmsg(data.username, data.msg);
+    });
+</script>
+
+</html>
